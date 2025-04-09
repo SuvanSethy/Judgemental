@@ -1,0 +1,129 @@
+.product-placeholder {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(45deg, #000000, #1a1a1a);
+  overflow: hidden;
+}
+
+.product-placeholder::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: 
+    linear-gradient(90deg, transparent 0%, rgba(255, 255, 255, 0.1) 50%, transparent 100%),
+    repeating-linear-gradient(45deg, transparent 0, transparent 10px, rgba(255, 255, 255, 0.05) 10px, rgba(255, 255, 255, 0.05) 20px);
+  animation: shimmer 2s infinite;
+}
+
+.product-placeholder::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(circle at 50% 50%, rgba(255, 0, 0, 0.1), transparent 70%);
+  animation: pulse 3s infinite;
+}
+
+/* Circuit pattern overlay */
+.product-placeholder .circuit-pattern {
+  position: absolute;
+  inset: 0;
+  background-image: 
+    linear-gradient(90deg, rgba(255, 255, 255, 0.1) 1px, transparent 1px),
+    linear-gradient(0deg, rgba(255, 255, 255, 0.1) 1px, transparent 1px);
+  background-size: 20px 20px;
+  opacity: 0.3;
+}
+
+/* Glowing border effect */
+.product-placeholder .glow-border {
+  position: absolute;
+  inset: 0;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  box-shadow: 
+    0 0 10px rgba(255, 0, 0, 0.2),
+    0 0 20px rgba(0, 0, 255, 0.2);
+  animation: borderGlow 2s infinite;
+}
+
+/* Scanning line effect */
+.product-placeholder .scan-line {
+  position: absolute;
+  width: 100%;
+  height: 2px;
+  background: linear-gradient(90deg, 
+    transparent 0%,
+    rgba(255, 255, 255, 0.8) 50%,
+    transparent 100%
+  );
+  animation: scan 2s linear infinite;
+}
+
+/* Animations */
+@keyframes shimmer {
+  0% {
+    transform: translateX(-100%);
+  }
+  100% {
+    transform: translateX(100%);
+  }
+}
+
+@keyframes pulse {
+  0%, 100% {
+    opacity: 0.5;
+  }
+  50% {
+    opacity: 0.8;
+  }
+}
+
+@keyframes borderGlow {
+  0%, 100% {
+    box-shadow: 
+      0 0 10px rgba(255, 0, 0, 0.2),
+      0 0 20px rgba(0, 0, 255, 0.2);
+  }
+  50% {
+    box-shadow: 
+      0 0 20px rgba(255, 0, 0, 0.4),
+      0 0 40px rgba(0, 0, 255, 0.4);
+  }
+}
+
+@keyframes scan {
+  0% {
+    transform: translateY(-100%);
+  }
+  100% {
+    transform: translateY(200%);
+  }
+}
+
+/* Product-specific variations */
+.neon-jacket {
+  background: linear-gradient(45deg, #ff00ff, #00ffff);
+}
+
+.cyber-pants {
+  background: linear-gradient(45deg, #00ff00, #0000ff);
+}
+
+.quantum-boots {
+  background: linear-gradient(45deg, #ff0000, #ff00ff);
+}
+
+.holo-hoodie {
+  background: linear-gradient(45deg, #ffff00, #00ffff);
+}
+
+.neural-tee {
+  background: linear-gradient(45deg, #00ff00, #ffff00);
+}
+
+.digital-gloves {
+  background: linear-gradient(45deg, #ff0000, #00ff00);
+} 

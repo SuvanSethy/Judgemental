@@ -1,0 +1,62 @@
+/* Placeholder styles for curse mark images */
+.curse-mark-placeholder {
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(45deg, #1a0033, #330033);
+  position: relative;
+  overflow: hidden;
+}
+
+.curse-mark-placeholder::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: 
+    radial-gradient(circle at center, transparent 30%, rgba(255, 0, 0, 0.1) 70%),
+    repeating-conic-gradient(from 0deg, rgba(255, 0, 0, 0.1) 0deg 30deg, transparent 30deg 60deg);
+  mix-blend-mode: overlay;
+  animation: rotate 20s linear infinite;
+}
+
+.curse-mark-placeholder::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: 
+    radial-gradient(circle at center, rgba(255, 0, 0, 0.2) 0%, transparent 70%);
+  mix-blend-mode: overlay;
+}
+
+@keyframes rotate {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+/* Individual curse mark variations */
+.curse-mark-heaven {
+  background: linear-gradient(45deg, #000033, #1a0066);
+}
+
+.curse-mark-earth {
+  background: linear-gradient(45deg, #1a3300, #336600);
+}
+
+.curse-mark-fire {
+  background: linear-gradient(45deg, #330000, #660000);
+}
+
+.curse-mark-water {
+  background: linear-gradient(45deg, #003333, #006666);
+}
+
+.curse-mark-wind {
+  background: linear-gradient(45deg, #1a1a1a, #4d4d4d);
+}
+
+.curse-mark-lightning {
+  background: linear-gradient(45deg, #1a0033, #4d0099);
+} 

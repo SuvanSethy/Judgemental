@@ -1,0 +1,276 @@
+/* Halloween Theme Styles */
+
+/* Custom Cursor */
+* {
+  cursor: none;
+}
+
+.cursor {
+  width: 20px;
+  height: 20px;
+  background: rgba(255, 102, 0, 0.5);
+  border: 2px solid #ff6600;
+  border-radius: 50%;
+  position: fixed;
+  pointer-events: none;
+  z-index: 9999;
+  transition: transform 0.2s ease;
+  transform: translate(-50%, -50%);
+}
+
+.cursor-follower {
+  width: 8px;
+  height: 8px;
+  background: #ff6600;
+  border-radius: 50%;
+  position: fixed;
+  pointer-events: none;
+  z-index: 9999;
+  transition: transform 0.1s ease;
+  transform: translate(-50%, -50%);
+}
+
+a:hover ~ .cursor,
+button:hover ~ .cursor,
+[role="button"]:hover ~ .cursor {
+  transform: translate(-50%, -50%) scale(1.5);
+  background: rgba(255, 102, 0, 0.8);
+}
+
+/* Halloween Background */
+.halloween-bg {
+  background: linear-gradient(135deg, #000000, #1a0033);
+  position: relative;
+  overflow: hidden;
+}
+
+.halloween-bg::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="100" height="100" viewBox="0 0 100 100"><path d="M50,10 C70,10 85,25 85,45 C85,65 70,80 50,80 C30,80 15,65 15,45 C15,25 30,10 50,10 Z" fill="%23ff6600" opacity="0.1"/><path d="M30,40 C40,30 60,30 70,40" stroke="%23ff6600" stroke-width="2" fill="none" opacity="0.2"/><path d="M35,50 C45,40 55,40 65,50" stroke="%23ff6600" stroke-width="2" fill="none" opacity="0.2"/><path d="M40,60 C45,55 55,55 60,60" stroke="%23ff6600" stroke-width="2" fill="none" opacity="0.2"/></svg>');
+  background-size: 200px;
+  background-position: center;
+  opacity: 0.3;
+  z-index: -1;
+}
+
+/* Floating Ghosts Animation */
+@keyframes float {
+  0% {
+    transform: translateY(0) rotate(0deg);
+  }
+  50% {
+    transform: translateY(-20px) rotate(5deg);
+  }
+  100% {
+    transform: translateY(0) rotate(0deg);
+  }
+}
+
+.floating-ghost {
+  position: absolute;
+  width: 50px;
+  height: 50px;
+  background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="50" height="50" viewBox="0 0 50 50"><path d="M25,5 C35,5 42,12 42,22 C42,32 35,39 25,39 C15,39 8,32 8,22 C8,12 15,5 25,5 Z" fill="%23ffffff" opacity="0.6"/><path d="M15,20 C20,15 30,15 35,20" stroke="%23ff6600" stroke-width="1" fill="none"/><path d="M18,25 C23,20 27,20 32,25" stroke="%23ff6600" stroke-width="1" fill="none"/><path d="M20,30 C23,27 27,27 30,30" stroke="%23ff6600" stroke-width="1" fill="none"/></svg>');
+  background-size: contain;
+  background-repeat: no-repeat;
+  opacity: 0.6;
+  z-index: 0;
+  pointer-events: none;
+  animation: float 6s ease-in-out infinite;
+}
+
+.ghost-1 {
+  top: 10%;
+  left: 5%;
+  animation-delay: 0s;
+}
+
+.ghost-2 {
+  top: 30%;
+  right: 10%;
+  animation-delay: 2s;
+  width: 70px;
+  height: 70px;
+}
+
+.ghost-3 {
+  bottom: 20%;
+  left: 15%;
+  animation-delay: 4s;
+  width: 40px;
+  height: 40px;
+}
+
+/* Halloween Text Effects */
+.halloween-text {
+  text-shadow: 0 0 10px rgba(255, 0, 0, 0.7), 0 0 20px rgba(255, 0, 0, 0.5);
+  color: #ff6600;
+}
+
+.halloween-title {
+  font-family: 'Creepster', cursive;
+  color: #ff6600;
+  text-shadow: 0 0 10px rgba(255, 0, 0, 0.7), 0 0 20px rgba(255, 0, 0, 0.5);
+}
+
+/* Halloween Button Styles */
+.halloween-button {
+  background: linear-gradient(to bottom, #ff6600, #cc3300);
+  border: 2px solid #ffcc00;
+  box-shadow: 0 0 10px rgba(255, 204, 0, 0.5);
+  color: white;
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.8);
+  transition: all 0.3s ease;
+}
+
+.halloween-button:hover {
+  background: linear-gradient(to bottom, #ff8533, #ff6600);
+  box-shadow: 0 0 15px rgba(255, 204, 0, 0.7);
+  transform: translateY(-2px);
+}
+
+/* Halloween Card Styles */
+.halloween-card {
+  background: rgba(0, 0, 0, 0.7);
+  border: 1px solid #ff6600;
+  box-shadow: 0 0 15px rgba(255, 102, 0, 0.3);
+  transition: all 0.3s ease;
+}
+
+.halloween-card:hover {
+  box-shadow: 0 0 20px rgba(255, 102, 0, 0.5);
+  transform: translateY(-5px);
+}
+
+/* Halloween Badge */
+.halloween-badge {
+  background: linear-gradient(to right, #ff6600, #cc3300);
+  color: white;
+  border-radius: 50%;
+  padding: 5px 10px;
+  font-size: 0.8rem;
+  font-weight: bold;
+  box-shadow: 0 0 10px rgba(255, 102, 0, 0.5);
+}
+
+/* Halloween Footer */
+.halloween-footer {
+  background: linear-gradient(to bottom, #000000, #1a0000);
+  border-top: 2px solid #ff6600;
+  position: relative;
+  overflow: hidden;
+}
+
+.halloween-footer::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 5px;
+  background: linear-gradient(to right, #ff6600, #ffcc00, #ff6600);
+  animation: glow 2s infinite;
+}
+
+@keyframes glow {
+  0% {
+    opacity: 0.5;
+  }
+  50% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0.5;
+  }
+}
+
+/* Halloween Loading Animation */
+.halloween-loading {
+  position: relative;
+  width: 60px;
+  height: 60px;
+}
+
+.halloween-loading::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  border: 4px solid transparent;
+  border-top-color: #ff6600;
+  border-right-color: #ffcc00;
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+/* Halloween FAQ Styles */
+.halloween-faq {
+  background: rgba(0, 0, 0, 0.8);
+  border: 1px solid #ff6600;
+  border-radius: 8px;
+  margin-bottom: 1rem;
+  overflow: hidden;
+}
+
+.halloween-faq-header {
+  background: linear-gradient(to right, #330000, #660000);
+  color: white;
+  padding: 1rem;
+  cursor: pointer;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.halloween-faq-content {
+  padding: 1rem;
+  color: #ffcc99;
+  border-top: 1px solid #ff6600;
+}
+
+/* Halloween Countdown */
+.halloween-countdown {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  margin: 2rem 0;
+}
+
+.countdown-item {
+  background: rgba(0, 0, 0, 0.7);
+  border: 1px solid #ff6600;
+  border-radius: 8px;
+  padding: 1rem;
+  min-width: 80px;
+  text-align: center;
+}
+
+.countdown-number {
+  font-size: 2rem;
+  font-weight: bold;
+  color: #ff6600;
+  text-shadow: 0 0 10px rgba(255, 102, 0, 0.7);
+}
+
+.countdown-label {
+  font-size: 0.8rem;
+  color: #ffcc99;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+} 

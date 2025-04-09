@@ -1,0 +1,172 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Metal+Mania&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@font-face {
+  font-family: 'Metal';
+  src: url('/fonts/metal.woff2') format('woff2');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'DevilScream';
+  src: url('/fonts/DevilScream.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'DevilComesDemoRegular';
+  src: url('/fonts/DevilComesDemoRegular.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@layer base {
+  :root {
+    --background: 0 0% 0%;
+    --foreground: 0 0% 100%;
+
+    --card: 0 0% 3%;
+    --card-foreground: 0 0% 98%;
+
+    --popover: 0 0% 3%;
+    --popover-foreground: 0 0% 98%;
+
+    --primary: 0 100% 50%;
+    --primary-foreground: 0 0% 100%;
+
+    --secondary: 210 100% 50%;
+    --secondary-foreground: 0 0% 100%;
+
+    --muted: 0 0% 15%;
+    --muted-foreground: 0 0% 70%;
+
+    --accent: 270 100% 40%;
+    --accent-foreground: 0 0% 100%;
+
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 0 0% 98%;
+
+    --border: 0 0% 20%;
+    --input: 0 0% 15%;
+    --ring: 0 0% 98%;
+
+    --radius: 0.5rem;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border-primary;
+  }
+
+  body {
+    @apply bg-black text-white cursor-default;
+  }
+
+  h1, h2, h3, h4 {
+    @apply font-metal tracking-wider;
+  }
+
+  p, a, button, li {
+    @apply font-sans;
+  }
+}
+
+@layer components {
+  .curse-text-shadow {
+    text-shadow: 0 0 8px rgba(255, 0, 34, 0.7);
+  }
+  
+  .curse-blue-text-shadow {
+    text-shadow: 0 0 8px rgba(0, 163, 255, 0.7);
+  }
+  
+  .curse-container {
+    background: linear-gradient(135deg, rgba(0,0,0,0.9) 0%, rgba(20,20,20,0.8) 100%);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(8px);
+  }
+  
+  .marquee {
+    white-space: nowrap;
+    overflow: hidden;
+    position: relative;
+  }
+  
+  .marquee span {
+    display: inline-block;
+    animation: marquee 20s linear infinite;
+  }
+  
+  @keyframes marquee {
+    0% { transform: translateX(0); }
+    100% { transform: translateX(-50%); }
+  }
+}
+
+.gothic-title {
+  font-family: 'Metal Mania', cursive;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  color: white;
+  text-shadow: 0 0 10px rgba(255, 255, 255, 0.5);
+}
+
+.exclusive-drop {
+  font-family: 'Metal Mania', cursive;
+  font-size: 4rem;
+  letter-spacing: 4px;
+  text-transform: uppercase;
+  background: linear-gradient(to bottom, #ffffff 0%, #757575 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  filter: drop-shadow(0 0 15px rgba(255, 255, 255, 0.3));
+  margin: 2rem 0;
+}
+
+.countdown-container {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1rem;
+  max-width: 600px;
+  margin: 2rem auto;
+}
+
+.countdown-item {
+  background: rgba(0, 0, 0, 0.7);
+  border: 2px solid rgba(255, 255, 255, 0.1);
+  padding: 1rem;
+  text-align: center;
+  border-radius: 8px;
+}
+
+.countdown-number {
+  font-family: 'Metal Mania', cursive;
+  font-size: 2.5rem;
+  color: white;
+  margin: 0;
+}
+
+.countdown-label {
+  font-family: 'Metal Mania', cursive;
+  color: #757575;
+  font-size: 1rem;
+  margin-top: 0.5rem;
+}
+
+.description {
+  font-family: 'Metal Mania', cursive;
+  color: #757575;
+  font-size: 1.5rem;
+  text-align: center;
+  margin: 2rem 0;
+  letter-spacing: 1px;
+}
